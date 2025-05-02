@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Alumno</title>
+    <link rel="stylesheet" href="assets/css/creative-design.css"> <!-- Ruta al archivo CSS -->
+    <style>
+/* Contenedor de las cartas */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Estilo de las cartas */
+.card {
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover para las cartas */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las imágenes */
+.card img {
+    width: 100%;
+    height: 200px; /* Mantener la altura constante */
+    object-fit: contain; /* Cambiar para evitar el recorte de las imágenes */
+    border-radius: 8px;
+}
+
+/* Títulos de las cartas */
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Botón de selección dentro de las cartas */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Botón de registrar */
+button[type="submit"] {
+    margin-top: 30px; /* Añadido margen superior para separar el botón de las cartas */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Alumno</h1>
+        <form action="submit_form_alumno.php" method="POST">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" name="clave" required><br>
+
+            <p>Selecciona tu clase:</p>
+            <!-- Contenedor de las cartas -->
+            <div class="card-container">
+                <!-- Carta para Mago -->
+                <div class="card">
+                    <img src="assets/imgs/mago.jpg" alt="Mago">
+                    <h3>Mago</h3>
+                    <p>Domina el poder de los hechizos mágicos.</p>
+                    <label>
+                        <input type="radio" name="clase" value="mago" required>
+                        Seleccionar
+                    </label>
+                </div>
+
+                <!-- Carta para Guerrero -->
+                <div class="card">
+                    <img src="assets/imgs/guerrero.jpg" alt="Guerrero">
+                    <h3>Guerrero</h3>
+                    <p>Conviértete en un experto en combate cuerpo a cuerpo.</p>
+                    <label>
+                        <input type="radio" name="clase" value="guerrero">
+                        Seleccionar
+                    </label>
+                </div>
+
+                <!-- Carta para Sanador -->
+                <div class="card">
+                    <img src="assets/imgs/sanador.jpg" alt="Sanador">
+                    <h3>Sanador</h3>
+                    <p>Curación y apoyo en combate para tu equipo.</p>
+                    <label>
+                        <input type="radio" name="clase" value="sanador">
+                        Seleccionar
+                    </label>
+                </div>
+
+                <!-- Carta para Arquero -->
+                <div class="card">
+                    <img src="assets/imgs/arquero.jpg" alt="Arquero">
+                    <h3>Arquero</h3>
+                    <p>Precisión y habilidades a larga distancia.</p>
+                    <label>
+                        <input type="radio" name="clase" value="arquero">
+                        Seleccionar
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
